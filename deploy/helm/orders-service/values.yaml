@@ -1,0 +1,9 @@
+service:
+  port: 8081
+
+ingress:
+  enabled: true
+  host: orders.demo.local
+  path: /orders
+  className: nginx
+  annotations: {}

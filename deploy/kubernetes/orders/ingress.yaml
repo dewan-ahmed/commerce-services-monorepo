@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: orders
+  namespace: demo
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: orders.demo.local
+      http:
+        paths:
+          - path: /orders
+            backend:
+              serviceName: orders-service
+              servicePort: 8081

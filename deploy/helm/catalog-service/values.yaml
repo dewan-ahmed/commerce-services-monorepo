@@ -1,0 +1,9 @@
+service:
+  port: 8080
+
+ingress:
+  enabled: true
+  host: catalog.demo.local
+  path: /catalog
+  className: nginx
+  annotations: {}

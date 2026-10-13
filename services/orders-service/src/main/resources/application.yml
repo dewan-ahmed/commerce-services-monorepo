@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: orders-service
+
+platform:
+  security:
+    entra:
+      tenant-id: ${ENTRA_TENANT_ID:}
+      audience: ${ENTRA_AUDIENCE:}
+      required-scope: orders.read
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+      probes:
+        enabled: true

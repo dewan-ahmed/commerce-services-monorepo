@@ -1,0 +1,13 @@
+<configuration>
+    <springProperty name="environment" source="APP_ENV" defaultValue="local"/>
+
+    <appender name="JSON_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>{"service":"orders-service","environment":"${environment}"}</customFields>
+        </encoder>
+    </appender>
+
+    <root level="${LOG_LEVEL:-INFO}">
+        <appender-ref ref="JSON_CONSOLE"/>
+    </root>
+</configuration>
